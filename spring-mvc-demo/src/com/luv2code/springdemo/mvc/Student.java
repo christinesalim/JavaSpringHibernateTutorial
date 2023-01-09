@@ -2,6 +2,7 @@ package com.luv2code.springdemo.mvc;
 
 import java.util.LinkedHashMap;
 
+//Student model
 public class Student {
 	private String firstName;
 	private String lastName;
@@ -45,8 +46,6 @@ public class Student {
 	//Used to load up options in the form
 	public LinkedHashMap<String, String> getCountryOptions() {
 		return countryOptions;
-	}
-	
-	
+	}	
 
 }
