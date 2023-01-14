@@ -42,6 +42,8 @@ public class EagerLazyDemo {
 			//close the session
 			session.close();
 			
+			System.out.println("Session is now closed");
+			
 			//Session is closed, but we already loaded the data while the session was open
 			System.out.println("luv2code: Courses: " + tempInstructor.getCourses());
 			
