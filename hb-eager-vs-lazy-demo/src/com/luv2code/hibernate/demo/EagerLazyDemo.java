@@ -32,11 +32,19 @@ public class EagerLazyDemo {
 			Instructor tempInstructor = session.get(Instructor.class, id);
 			
 			System.out.println("luv2code: Instructor: " + tempInstructor);
-			System.out.println("luv2code: Courses: " + tempInstructor.getCourses());
 			
+			//load the courses in memory while the sessio is open
+			System.out.println("luv2code: Courses: " + tempInstructor.getCourses());
 			
 			//commit the transaction
 			session.getTransaction().commit();
+			
+			//close the session
+			session.close();
+			
+			//Session is closed, but we already loaded the data while the session was open
+			System.out.println("luv2code: Courses: " + tempInstructor.getCourses());
+			
 			
 			System.out.println("luv2code: Done!");
 		}
