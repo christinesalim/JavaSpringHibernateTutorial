@@ -35,20 +35,7 @@ public class GetCoursesForMaryDemo {
 			Student student = session.get(Student.class, id);
 			System.out.println("\nLoaded student: " + student);
 			System.out.println("Courses: " + student.getCourses());
-			
-			//create new courses
-			Course tempCourse1 = new Course("MineCraft: How to Build a Base");
-			Course tempCourse2 = new Course("Atari 2600: Game Development");
-			
-			
-			//add Mary to those courses
-			tempCourse1.addStudent(student);
-			tempCourse2.addStudent(student);
-			
-			System.out.println("Saving the courses...");
-			session.save(tempCourse1);
-			session.save(tempCourse2);			
-			
+					
 			//commit the transaction
 			session.getTransaction().commit();
 			
