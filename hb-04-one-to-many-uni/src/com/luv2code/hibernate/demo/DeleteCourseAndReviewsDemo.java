@@ -9,7 +9,7 @@ import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.InstructorDetail;
 import com.luv2code.hibernate.demo.entity.Review;
 
-public class GetCourseAndReviewsDemo {
+public class DeleteCourseAndReviewsDemo {
 
 	public static void main(String[] args) {
 		//Create session factory
@@ -28,18 +28,15 @@ public class GetCourseAndReviewsDemo {
 			//begin a transaction
 			session.beginTransaction();
 			
-			//Get the course and delete the course
+			//Get the course
 			int id = 10;
 			Course tempCourse = session.get(Course.class, id);
 			
 			//Print the course
-			System.out.println("Deleting the course...");
 			System.out.println(tempCourse);
 						
 			//Print course reviews - lazy fetch so reviews will be loaded for this printout
 			System.out.println(tempCourse.getReviews());
-			
-			session.delete(tempCourse);
 			
 			//commit the transaction
 			session.getTransaction().commit();
