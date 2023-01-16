@@ -30,29 +30,13 @@ public class CreateCourseAndStudentsDemo {
 			//begin a transaction
 			session.beginTransaction();
 			
-			//create a course
-			Course tempCourse = new Course("Pacman - How to Score One Million Points");
+			//get the student Mary from the database
+			int id = 2;
+			Student student = session.get(Student.class, id);
+			System.out.println("\nLoaded student: " + student);
+			System.out.println("Courses: " + student.getCourses());
+				
 			
-			//save the course
-			System.out.println("\nSaving the course...");
-			session.save(tempCourse);
-			System.out.println("Saved the course: " + tempCourse);
-						
-		    //create a student
-			Student tempStudent1 = new Student("John", "Doe", "john@gmail.com");
-			Student tempStudent2 = new Student("Mary", "Public", "mary@gmail.com");
-			
-			//add students to the course
-			tempCourse.addStudent(tempStudent1);
-			tempCourse.addStudent(tempStudent2);
-			
-			//save the students
-			System.out.println("\nSaving students...");
-			session.save(tempStudent1);
-			session.save(tempStudent2);
-			System.out.println("Saved students: " + tempCourse.getStudents());
-			
-		
 			//commit the transaction
 			session.getTransaction().commit();
 			
