@@ -10,7 +10,7 @@ import com.luv2code.hibernate.demo.entity.InstructorDetail;
 import com.luv2code.hibernate.demo.entity.Review;
 import com.luv2code.hibernate.demo.entity.Student;
 
-public class GetCoursesForMaryDemo {
+public class DeleteMaryStudentDemo {
 
 	public static void main(String[] args) {
 		//Create session factory
@@ -35,9 +35,6 @@ public class GetCoursesForMaryDemo {
 			Student student = session.get(Student.class, id);
 			System.out.println("\nLoaded student: " + student);
 			System.out.println("Courses: " + student.getCourses());
-			
-			//delete Mary
-			session.delete(student);
 					
 			//commit the transaction
 			session.getTransaction().commit();
