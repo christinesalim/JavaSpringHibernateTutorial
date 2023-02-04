@@ -16,5 +16,7 @@ public interface CustomerDAO {
 
 	public List<Customer> searchCustomers(String theSearchName);
 
+	public List<Customer> getCustomers(int theSortField);
+
 
 }
